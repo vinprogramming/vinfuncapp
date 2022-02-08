@@ -43,5 +43,5 @@ jobs:
 #       uses: Azure/functions-action@v1.4.4
 #       with:
 #         app-name: vinfuncapp
-#         package: zippedoutputano.zip
+#         package: vinfuncapp/zippedoutputano.zip
     
