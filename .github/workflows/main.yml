@@ -32,9 +32,16 @@ jobs:
       run: |
         sudo apt install zip
         zip -r zippedoutput.zip /home/runner/work/vinfuncapp/vinfuncapp/vinfuncapp/publishedVinOutput
+    - name: Display files and folders
+      run: |
+        ls
+        ls home/runner/work/vinfuncapp/vinfuncapp/vinfuncapp/
+        ls home/runner/work/vinfuncapp/vinfuncapp/
+        ls home/runner/work/vinfuncapp/
+        ls home/runner/work/
     - name: Azure Functions Action
       uses: Azure/functions-action@v1.4.4
       with:
         app-name: vinfuncapp
-        package: home/runner/work/vinfuncapp/vinfuncapp/vinfuncapp/zippedoutput.zip
+        package: home/runner/work/vinfuncapp/vinfuncapp/zippedoutput.zip
     
