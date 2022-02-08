@@ -27,6 +27,7 @@ jobs:
       working-directory: vinfuncapp
     - name: Publish
       run: dotnet publish --configuration Release --output publishedVinOutput
+      working-directory: vinfuncapp
     - name: Zip Release
       uses: TheDoctor0/zip-release@0.6.1
       with:
