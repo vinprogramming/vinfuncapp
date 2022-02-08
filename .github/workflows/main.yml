@@ -31,5 +31,5 @@ jobs:
     - name: Archive the output
       run: |
         sudo apt install zip
-        zip -r zippedoutput.zip /home/runner/work/vinfuncapp/vinfuncapp/vinfuncapp/publishedVinOutput/
+        zip -r zippedoutput.zip /home/runner/work/vinfuncapp/vinfuncapp/vinfuncapp/publishedVinOutput
     
