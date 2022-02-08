@@ -9,9 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: azure/login@v1
-      with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
+#     - uses: azure/login@v1
+#       with:
+#         creds: ${{ secrets.AZURE_CREDENTIALS }}
     - name: Run a multi-line script
       run: |
         ls
@@ -31,21 +31,19 @@ jobs:
     - name: Archive the output
       run: |
         sudo apt install zip unzip
-        zip -r zippedoutputano.zip /home/runner/work/vinfuncapp/vinfuncapp/vinfuncapp/publishedVinOutput
+        zip -r zippedoutputano.zip **/publishedVinOutput
     - name: Display files and folders
       run: |
         ls
-        unzip zippedoutputano.zip -d temp_for_zip_extract
-        ls temp_for_zip_extract
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.3.1
       with:
         # Artifact name
-        name: compressed published .net app
+        name: compressed published .net app2
         path: zippedoutputano.zip
-    - name: Azure Functions Action
-      uses: Azure/functions-action@v1.4.4
-      with:
-        app-name: vinfuncapp
-        package: zippedoutputano.zip
+#     - name: Azure Functions Action
+#       uses: Azure/functions-action@v1.4.4
+#       with:
+#         app-name: vinfuncapp
+#         package: zippedoutputano.zip
     
