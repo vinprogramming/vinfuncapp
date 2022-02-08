@@ -31,7 +31,7 @@ jobs:
     - name: Archive the output
       run: |
         sudo apt install zip unzip
-        zip -r zippedoutputano.zip **/publishedVinOutput
+        zip -r zippedoutputano.zip **/publishedVinOutput/
     - name: Display files and folders
       run: |
         ls
@@ -39,7 +39,7 @@ jobs:
       uses: actions/upload-artifact@v2.3.1
       with:
         # Artifact name
-        name: compressed published .net app2
+        name: compressed published .net app3
         path: zippedoutputano.zip
 #     - name: Azure Functions Action
 #       uses: Azure/functions-action@v1.4.4
