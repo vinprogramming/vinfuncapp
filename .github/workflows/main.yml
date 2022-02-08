@@ -30,11 +30,13 @@ jobs:
       working-directory: vinfuncapp
     - name: Archive the output
       run: |
-        sudo apt install zip
+        sudo apt install zip unzip
         zip -r zippedoutputano.zip /home/runner/work/vinfuncapp/vinfuncapp/vinfuncapp/publishedVinOutput
     - name: Display files and folders
       run: |
         ls
+        unzip zippedoutputano.zip -d temp_for_zip_extract
+        ls temp_for_zip_extract
     - name: Azure Functions Action
       uses: Azure/functions-action@v1.4.4
       with:
