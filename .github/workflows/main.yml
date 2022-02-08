@@ -28,4 +28,8 @@ jobs:
     - name: Publish
       run: dotnet publish --configuration Release --output publishedVinOutput
       working-directory: vinfuncapp
+    - name: Archive the output
+      run: |
+        sudo apt install zip
+        zip -r zippedoutput.zip /home/runner/work/vinfuncapp/vinfuncapp/vinfuncapp/publishedVinOutput/
     
