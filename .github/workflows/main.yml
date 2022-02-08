@@ -39,7 +39,7 @@ jobs:
       uses: actions/upload-artifact@v2.3.1
       with:
         name: artofzipped5
-        path: vinfuncapp/zippedout.zip
+        path: vinfuncapp/publishedVinOutput/zippedout.zip
 #     - name: Azure Functions Action
 #       uses: Azure/functions-action@v1.4.4
 #       with:
