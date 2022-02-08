@@ -28,20 +28,16 @@ jobs:
     - name: Publish
       run: dotnet publish --configuration Release --output publishedVinOutput
       working-directory: vinfuncapp
-    - name: Zip Release
-      uses: TheDoctor0/zip-release@0.6.1
-      with:
-        filename: zippedoutputano.zip
-        directory: publishedVinOutput/
-    - name: Display files and folders
+    - name: Create a zip file
       run: |
         ls
+        zip zippedout.zip publishedVinOutput
+      working-directory: vinfuncapp
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.3.1
       with:
-        # Artifact name
-        name: artofzip
-        path: zippedoutputano.zip
+        name: artofzipped
+        path: zippedout.zip
 #     - name: Azure Functions Action
 #       uses: Azure/functions-action@v1.4.4
 #       with:
