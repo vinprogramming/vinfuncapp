@@ -31,7 +31,7 @@ jobs:
     - name: Archive the output
       run: |
         sudo apt install zip unzip
-        zip -r zippedoutputano.zip **/publishedVinOutput/
+        zip zippedoutputano.zip **/publishedVinOutput/
     - name: Display files and folders
       run: |
         ls
