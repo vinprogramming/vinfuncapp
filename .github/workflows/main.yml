@@ -32,7 +32,8 @@ jobs:
       run: |
         ls
         pwd
-        zip -r zippedout.zip publishedVinOutput/*
+        cd publishedVinOutput
+        zip -r zippedout.zip ./*
       working-directory: vinfuncapp
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.3.1
