@@ -24,6 +24,7 @@ jobs:
       working-directory: vinfuncapp
     - name: Build
       run: dotnet build --no-restore
+      working-directory: vinfuncapp
     - name: Publish
       run: dotnet publish --configuration Release --output publishedVinOutput
     - name: Zip Release
