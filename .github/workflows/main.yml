@@ -32,14 +32,12 @@ jobs:
       run: |
         ls
         pwd
-        cd publishedVinOutput
-        ls
-        zip zippedout.zip publishedVinOutput
+        zip -r zippedout.zip publishedVinOutput
       working-directory: vinfuncapp
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.3.1
       with:
-        name: artofzipped
+        name: artofzipped5
         path: zippedout.zip
 #     - name: Azure Functions Action
 #       uses: Azure/functions-action@v1.4.4
