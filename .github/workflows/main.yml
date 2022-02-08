@@ -12,10 +12,14 @@ jobs:
     - uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
-    - name: Azure CLI script
-      uses: azure/CLI@v1
+    - name: Setup .NET Core SDK
+      uses: actions/setup-dotnet@v1.9.0
       with:
-        azcliversion: 2.30.0
-        inlineScript: |
-          az account show
-          az storage -h
+        dotnet-version: 6.0
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --no-restore
+    - name: Publish
+      run: dotnet publish --configuration Release --output publishedVinOutput
+    
