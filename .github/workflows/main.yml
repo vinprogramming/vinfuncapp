@@ -9,9 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-#     - uses: azure/login@v1
-#       with:
-#         creds: ${{ secrets.AZURE_CREDENTIALS }}
+    - uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
     - name: Run a multi-line script
       run: |
         ls
@@ -40,9 +40,9 @@ jobs:
       with:
         name: artofzipped5
         path: vinfuncapp/publishedVinOutput/zippedout.zip
-#     - name: Azure Functions Action
-#       uses: Azure/functions-action@v1.4.4
-#       with:
-#         app-name: vinfuncapp
-#         package: vinfuncapp/zippedoutputano.zip
+    - name: Azure Functions Action
+      uses: Azure/functions-action@v1.4.4
+      with:
+        app-name: vinfuncapp
+        package: vinfuncapp/publishedVinOutput/zippedout.zip
     
