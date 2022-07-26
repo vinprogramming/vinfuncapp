@@ -3,6 +3,7 @@ on: [push]
 
 name: AzureLoginSample
 
+
 jobs:
 
   build-and-deploy:
